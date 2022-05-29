@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Budget Tracker</title>
+    <h1> <text-align><center>Budget Tracker</center></text-align></h1>
+    <hr size="6" width="90%" color="green">  
+    <h2><text-align><center>Enter your expenses to see how much you have spent in each category.</center></text-align></h2>
+    <script src="budget.js"></script>
+  </head>
+  <body>
+        <h3>Food - separate each amount with a comma</h3>
+        <p id = "food_total"></p>
+        <label for="amount">Amount spent on food</label>
+        <input type="list" id="foodAmount" placeholder="amount spent" />
+        </p>
+        <button id="calcFoodButton">Calculate Food</button>  
+        <h3>Bills - separate each amount with a comma</h3>
+        <p id = "bills_total"></p>
+        <label for="amount">Amount spent on bills</label>
+        <input type="list" id="billsAmount" placeholder="amount spent" />
+        </p>
+        <button id="calcBillsButton">Calculate Bills</button>  
+        <h3>Automotive - separate each amount with a comma</h3>
+        <p id = "auto_total"></p>
+        <label for="amount">Amount spent on automotive</label>
+        <input type="list" id="autoAmount" placeholder="amount spent" />
+        </p>
+        <button id="calcAutoButton">Calculate Automotive</button>  
+        <h3>Tithing - separate each amount with a comma</h3>
+        <p id = "tithing_total"></p>
+        <label for="amount">Amount spent on tithing</label>
+        <input type="list" id="tithingAmount" placeholder="amount spent" />
+        </p>
+        <button id="calcTithingButton">Calculate Tithing</button>  
+        <h3>Savings - separate each amount with a comma</h3>
+        <p id = "savings_total"></p>
+        <label for="amount">Amount spent on savings</label>
+        <input type="list" id="savingsAmount" placeholder="amount spent" />
+        </p>
+        <button id="calcSavingsButton">Calculate Savings</button>  
+  </body>
+</html>

@@ -4,7 +4,7 @@ const diceArray = [];
 function startGame() {
     rollDice();
     getValues(diceArray);
-    totalScore();
+    sumOfValues(pointValues);
 };
 // let current_score_message = document.querySelector("#current_score_message");
 
@@ -45,12 +45,12 @@ function getValues(diceArray) {
     document.querySelector("#testing").innerHTML = pointValues;
 };
 
-// let sum = pointValues.reduce(totalScore);
-
-let total_score = 0;
-function sumOfValues() {
-
-    document.querySelector("#current_score_message").innerHTML = "Your score: " + total_score;    
+function sumOfValues(pointValues) {
+    // add up all 5 dice values into total_score
+    for (let index = 0; index < pointValues.length; index++) {
+        sum += pointValues[index];
+    };
+    document.querySelector("#current_score_message").innerHTML = "Your score: " + sum;  
 };
 
 //if playing again, clear array

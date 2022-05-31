@@ -1,13 +1,15 @@
-dice = 10;
-round_score = 0;
-game_score = 0;
-is_playing = true;
+// let is_playing = true;
+const diceArray = [];
 
-const dice_rolled = document.querySelector("#dice_rolled").textContent;
-const current_score_message = document.querySelector("#current_score_message");
+function startGame() {
+    rollDice();
+    getValues(diceArray);
+    totalScore();
+};
+// let current_score_message = document.querySelector("#current_score_message");
 
 function rollDice() {
-    var diceArray = [];
+    // roll 5 dice and save rolled numbers to diceArray
     var dice1 = Math.floor(Math.random() * 5) + 1;
     var dice2 = Math.floor(Math.random() * 5) + 1;
     var dice3 = Math.floor(Math.random() * 5) + 1;
@@ -18,27 +20,39 @@ function rollDice() {
     diceArray.push(dice3);
     diceArray.push(dice4);
     diceArray.push(dice5);
-    dice_rolled = diceArray;
+    // send array to html to be viewed on DOM
+    document.querySelector("#dice_rolled").innerHTML = "You rolled: " + diceArray;
 };
 
-// function addValue() {
-//      dice = diceList.map(dieValue);
-//     dice_roll = diceArray
-// };
+let pointValues = [];
 
-// function dieValue() {
-//     if (value == 1) {
-//         points = 100;
-//     }
-//     else if (value == 5) {
-//         points = 50;
-//     }
-//     else {
-//         points = 0;
-//     }
-// return points
-// };
+function getValues(diceArray) {
+    let points = 0;
+    const dicePoints = diceArray.map(die => {
+        if (die === 1 ) {
+            points = 100;
+        }
+        else if (die === 5 ) {
+            points = 50;
+        }
+        else {
+            points = 0;
+        }
+        return points;
+    });
+    pointValues += dicePoints;
+    //take this out once game if functioning
+    document.querySelector("#testing").innerHTML = pointValues;
+};
 
-// document.querySelector("#current_score_message").innerHTML = "Your current score is: 0" + diceArray;
+// let sum = pointValues.reduce(totalScore);
 
-document.querySelector("#roll_dice_button").addEventListener("click", rollDice());
+let total_score = 0;
+function sumOfValues() {
+
+    document.querySelector("#current_score_message").innerHTML = "Your score: " + total_score;    
+};
+
+//if playing again, clear array
+
+document.querySelector("#roll_dice_button").addEventListener("click", startGame);

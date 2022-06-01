@@ -6,7 +6,6 @@ function startGame() {
     getValues(diceArray);
     sumOfValues(pointValues);
 };
-// let current_score_message = document.querySelector("#current_score_message");
 
 function rollDice() {
     // roll 5 dice and save rolled numbers to diceArray
@@ -46,9 +45,13 @@ function getValues(diceArray) {
 };
 
 function sumOfValues(pointValues) {
-    for(var sum = 0; i < pointValues.length; i++){
-        total += pointValues[i];
-    };
+
+    // None of these work! 
+    // The pointValues array is an array before this function, but inside this function, it doesn't see it as one.
+
+    // for(var result = 0; i < pointValues.length; i++){
+    //     total += pointValues[i];
+    // };
 
     // pointValues.forEach(point => {
     //     result += point;

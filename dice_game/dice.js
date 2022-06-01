@@ -46,11 +46,8 @@ function getValues(diceArray) {
 };
 
 function sumOfValues(pointValues) {
-    // add up all 5 dice values into total_score
-    for (let index = 0; index < pointValues.length; index++) {
-        sum += pointValues[index];
-    };
-    document.querySelector("#current_score_message").innerHTML = "Your score: " + sum;  
+    let totalOfPoints = pointValues.reduce((total, num) => total + num);
+    document.querySelector("#current_score_message").innerHTML = totalOfPoints;
 };
 
 //if playing again, clear array

@@ -28,7 +28,7 @@ let pointValues = [];
 
 function getValues(diceArray) {
     let points = 0;
-    const dicePoints = diceArray.map(die => {
+    let dicePoints = diceArray.map(die => {
         if (die === 1 ) {
             points = 100;
         }
@@ -46,8 +46,24 @@ function getValues(diceArray) {
 };
 
 function sumOfValues(pointValues) {
-    let totalOfPoints = pointValues.reduce((total, num) => total + num);
-    document.querySelector("#current_score_message").innerHTML = totalOfPoints;
+    for(var sum = 0; i < pointValues.length; i++){
+        total += pointValues[i];
+    };
+
+    // pointValues.forEach(point => {
+    //     result += point;
+    // });
+
+    // const add = (a, b) => a + b;
+    // const result = pointValues.reduce(add);
+
+    // for (let value of pointValues) {
+    //     result += value;
+    // };
+
+    // let result = pointValues.reduce((a, b) => a + b);
+
+    document.querySelector("#current_score_message").innerHTML = result;
 };
 
 //if playing again, clear array
